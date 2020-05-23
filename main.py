@@ -2,6 +2,20 @@ import logging
 from whats.whatsMensagens import *
 from mongo.conection import *
 import time
+#from  configparser import ConfigParser
+
+'''
+config = ConfigParser()
+config["MONGO"] = { "host":"$host$",
+                    "port":"$port$",
+                    "username":"$username$",
+                    "password":"$password$",
+                    "authSource":"$authSource$",
+                    "db":"$db$",
+                    "collection":"$collection$"}
+with open('./mongo.conf', 'w') as configfile:
+    config.write(configfile)
+'''
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', filename='info.log', level=logging.INFO)
 

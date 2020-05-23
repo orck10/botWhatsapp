@@ -1,3 +1,4 @@
 *.log
+*.conf
 venv
 __pycache__

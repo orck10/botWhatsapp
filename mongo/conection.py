@@ -1,15 +1,19 @@
 from pymongo import MongoClient
 import logging
+from  configparser import ConfigParser
+
+config = ConfigParser()
+config.read("./mongo.conf")
 
 class Mongo:
     def __init__(self):
-        self.client = MongoClient(host="192.168.99.100",
-                    port=27017, 
-                    username="root", 
-                    password="123456",
-                    authSource="admin")
-        self.db = self.client['dadoswhats']
-        self.collection = self.db['dadoswhats']
+        self.client = MongoClient(host=config.get("MONGO","host"),
+                    port=int(config.get("MONGO","port")), 
+                    username=config.get("MONGO","username"), 
+                    password=config.get("MONGO","password"),
+                    authSource=config.get("MONGO","authSource"))
+        self.db = self.client[config.get("MONGO","db")]
+        self.collection = self.db[config.get("MONGO","collection")]
     
     def insert(self, data):
         obj_id = self.collection.insert_one(data).inserted_id
