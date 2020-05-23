@@ -46,7 +46,7 @@ After install requirements run main.py
     python  main.py
 ```
 
-## Use BOOT
+## Use BOT
 
 After start bot, you need scan QRcode of webwhatsapp and left the chrome open.
 The bot will find mesages at database and send to contacts.
